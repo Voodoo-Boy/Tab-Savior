@@ -1,11 +1,11 @@
 {
     "name": "Tab Savior",
     "version": "1.0",
-    "description": "Save tabs for reopen next time",
+    "description": "Save tabs for reopening next time",
     "manifest_version": 2,
-    "permissions": ["storage"],
+    "permissions": ["storage", "contextMenus", "clipboardWrite"],
     "background":
     {
-        "scripts": ["background.js"]
+        "scripts": ["background.js", "background-contextmenu.js"]
     }
 }
