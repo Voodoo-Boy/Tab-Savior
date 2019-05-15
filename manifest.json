@@ -4,27 +4,30 @@
     "version": "1.0",
     "manifest_version": 2,
     "icons": {
-        "16": "icon/icons8-owl-16.png",
-        "32": "icon/icons8-owl-32.png",
-        "48": "icon/icons8-owl-48.png",
-        "128": "icon/icons8-owl-128.png"
+        "16": "icon/icons8-cat-footprint-16.png",
+        "32": "icon/icons8-cat-footprint-32.png",
+        "48": "icon/icons8-cat-footprint-48.png",
+        "128": "icon/icons8-cat-footprint-128.png"
     },
     "permissions": [
         "storage",
+        "tabs",
         "contextMenus"
     ],
     "background": {
         "persistent": false,
         "scripts": [
-            "background-contextmenu.js"
+            "background.js"
         ]
     },
-    "page_action": {
+    "browser_action": {
+        "default_title": "Tab Savior",
+        "default_popup": "popup.html",
         "default_icon": {
-            "16": "icon/icons8-owl-16.png",
-            "32": "icon/icons8-owl-32.png",
-            "48": "icon/icons8-owl-48.png",
-            "128": "icon/icons8-owl-128.png"
+            "16": "icon/icons8-cat-footprint-16.png",
+            "32": "icon/icons8-cat-footprint-32.png",
+            "48": "icon/icons8-cat-footprint-48.png",
+            "128": "icon/icons8-cat-footprint-128.png"
         }
     }
 }
