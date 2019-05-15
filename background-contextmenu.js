@@ -5,12 +5,12 @@ chrome.runtime.onInstalled.addListener(function() {
     chrome.contextMenus.create({
         "id": "tabsavior-contextmenu-id",
         "title": "copy link text",
-        "contexts": ["link"],
-        "onclick": onContextMenuClick
+        "contexts": ["link"]
       });
 })
 
-function onContextMenuClick(info, tab) {
+// Register listener for the context menu item..
+chrome.contextMenus.onClicked.addListener(function() {
     console.log("context menu clicked");
     console.log(document)
-}
+});
