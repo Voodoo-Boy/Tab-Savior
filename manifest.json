@@ -12,7 +12,8 @@
     "permissions": [
         "storage",
         "tabs",
-        "contextMenus"
+        "contextMenus",
+        "activeTab"
     ],
     "background": {
         "persistent": false,
@@ -29,5 +30,16 @@
             "48": "icon/icons8-cat-footprint-48.png",
             "128": "icon/icons8-cat-footprint-128.png"
         }
-    }
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "http://alicilibt.ws/*"
+            ],
+            "run_at": "document_start",
+            "js": [
+                "customize-alicilibt.js"
+            ]
+        }
+    ]
 }

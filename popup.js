@@ -1,17 +1,30 @@
-let bigButton = document.getElementById('bigButton');
+let saveTabsButton = document.getElementById('saveTabs');
+let restoreTabsButton = document.getElementById('restoreTabs');
 
-bigButton.onclick = function(event) {
-    // let color = element.target.value;
-    // chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-    //   chrome.tabs.executeScript(
-    //       tabs[0].id,
-    //       {code: 'document.body.style.backgroundColor = "' + color + '";'});
-    // });
-    
-        // chrome.storage.sync.get("tabs_1", function(items) {
-        //     console.log("Get: ", items);
-        // });
+saveTabsButton.onclick = function(event) {
+    chrome.tabs.query({currentWindow: true}, function(tabs) {
+        // Extract the favIcon, title, url of tabs in current window.
+        var tabToSave = [];
+        tabs.forEach(tab => {
+            tabToSave.push({favIconUrl: tab.favIconUrl, title: tab.title, url: tab.url})
+        });
 
+        // Save to storage.
+        chrome.storage.sync.set({tabs_1: tabToSave}, function() {
+            console.log("Saved");
+        });
+
+        log2Background("Save tabs");
+        var jsonString = JSON.stringify(tabToSave, null, '\t');
+        log2Background(jsonString);
+
+        chrome.storage.sync.getBytesInUse(null, function(bytesInUse) {
+            log2Background(`Storage Used:${bytesInUse}/${chrome.storage.sync.QUOTA_BYTES}`);
+        });
+    });
+};
+
+restoreTabsButton.onclick = function(event) {
     chrome.storage.sync.get("tabs_1", function(items) {
         let urlToOpen = [];
         items.tabs_1.forEach(item => {
@@ -22,5 +35,6 @@ bigButton.onclick = function(event) {
     });
     log2Background("Finish");
 };
+
 
 var log2Background = chrome.extension.getBackgroundPage().console.log;
