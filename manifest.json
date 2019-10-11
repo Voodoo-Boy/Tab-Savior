@@ -5,7 +5,7 @@
     "manifest_version": 2,
     "background": {
         "scripts": [
-            "CopyLinkText/BackgroundScript-CopyLinkName.js"
+            "CopyLinkText/CopyLinkText-BackgroundScript.js"
         ],
         "persistent": false
     },
