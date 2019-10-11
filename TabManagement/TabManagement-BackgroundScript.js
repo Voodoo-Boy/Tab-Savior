@@ -76,6 +76,37 @@ chrome.commands.onCommand.addListener(function (command) {
                 code: 'window.scrollTo(0, 0);'
             });
             break;
+        case 'ForTest':
+            chrome.tabs.query({
+                currentWindow: true
+            }, function (tabs) {
+                var tabList = [];
+                tabs.forEach(function (tab) {
+                    //tabList.push({ title: tab.title, url: tab.url });
+                    tabList.push({ title: tab.title, url: tab.url, favicon: tab.favIconUrl});
+                });
+                    console.log(tabList);
+
+                // //console.log(tabList);
+                // var myJSON = JSON.stringify(obj);
+                var blob = new Blob([JSON.stringify(tabList)], { type: 'application/json' });
+                    console.log(blob.size);
+                    console.log(JSON.stringify(tabList).length);
+                    console.log(JSON.stringify(tabList));
+
+                    var string = JSON.stringify(tabList);
+                    alert("Size of sample is: " + string.length);
+                    var compressed = LZString.compress(string);
+                    alert("Size of compressed sample is: " + compressed.length);
+                    string = LZString.decompress(compressed);
+                    alert("Sample is: " + string);
+            });
+
+            // Storage.Sync usage
+            //console.log(chrome.storage.sync);
+
+
+            break;
     }
 });
 
