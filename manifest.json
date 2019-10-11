@@ -5,13 +5,14 @@
     "manifest_version": 2,
     "background": {
         "scripts": [
-            "BackgroundScript/BackgroundScript-ContextMenu-CopyLinkName.js"
+            "CopyLinkText/BackgroundScript-CopyLinkName.js"
         ],
         "persistent": false
     },
     "permissions": [
         "contextMenus",
         "activeTab",
+        "tabs",
         "clipboardWrite"
     ],
     "icons": {
