@@ -13,5 +13,10 @@
         "contextMenus",
         "activeTab",
         "clipboardWrite"
-    ]
+    ],
+    "icons": {
+        "16": "Icon/TabSaviorIcon16x16.png",
+        "48": "Icon/TabSaviorIcon48x48.png",
+        "128": "Icon/TabSaviorIcon128x128.png"
+    }
 }

@@ -13,7 +13,6 @@ chrome.runtime.onInstalled.addListener(function () {
 chrome.contextMenus.onClicked.addListener(function (info, tab) {
     // When the copy link text context menu is clicked, execute a injected code snippet to get the link text.
     chrome.tabs.executeScript({
-        code: 'navigator.clipboard.writeText(document.activeElement.textContent);'
+        code: 'navigator.clipboard.writeText(document.activeElement.innerText);'
     });
-    //console.log(document.activeElement.textContent);
 });
