@@ -5,7 +5,8 @@
     "manifest_version": 2,
     "background": {
         "scripts": [
-            "CopyLinkText/CopyLinkText-BackgroundScript.js"
+            "CopyLinkText/CopyLinkText-BackgroundScript.js",
+            "TabManagement/TabManagement-BackgroundScript.js"
         ],
         "persistent": false
     },
@@ -19,5 +20,13 @@
         "16": "Icon/TabSaviorIcon16x16.png",
         "48": "Icon/TabSaviorIcon48x48.png",
         "128": "Icon/TabSaviorIcon128x128.png"
+    },
+    "commands": {
+        "CloseTabOnRight": {
+            "suggested_key": {
+                "default": "Alt+Shift+W"
+            },
+            "description": "Close all tabs on the right of current tab"
+        }
     }
 }

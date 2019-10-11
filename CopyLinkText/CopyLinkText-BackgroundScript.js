@@ -1,5 +1,5 @@
 chrome.runtime.onInstalled.addListener(function () {
-    console.log("Tab Savior Installed - Context Menu - CopyLinkName");
+    console.log("Tab Savior Installed - CopyLinkName");
     chrome.contextMenus.create({
         "id": "CopyLinkName",
         "title": "Copy Link Text",
