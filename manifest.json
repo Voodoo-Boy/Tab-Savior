@@ -27,6 +27,12 @@
                 "default": "Alt+Shift+W"
             },
             "description": "Close all tabs on the right of current tab"
+        },
+        "SwitchToPreviousTab": {
+            "suggested_key": {
+                "default": "Alt+Q"
+            },
+            "description": "Switch to last actived tab in the same window"
         }
     }
 }
