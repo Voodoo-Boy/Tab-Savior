@@ -71,7 +71,10 @@ chrome.commands.onCommand.addListener(function (command) {
             });
 
             break;
-        case 'CloseTabOnRight':
+        case 'ScrollToTop':
+            chrome.tabs.executeScript({
+                code: 'window.scrollTo(0, 0);'
+            });
             break;
     }
 });
