@@ -33,6 +33,12 @@
                 "default": "Alt+Q"
             },
             "description": "Switch to last actived tab in the same window"
+        },
+        "ScrollToTop": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+Space"
+            },
+            "description": "Scroll current page to top"
         }
     }
 }

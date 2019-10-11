@@ -71,25 +71,10 @@ chrome.commands.onCommand.addListener(function (command) {
             });
 
             break;
+        case 'CloseTabOnRight':
+            break;
     }
 });
-
-function switchToNextTab()
-{
-    chrome.tabs.query({
-        currentWindow: true
-    }, function (tabs) {
-        var totalTabsNumber = tabs.length;
-        chrome.tabs.query({
-            currentWindow: true,
-            active: true
-        }, function (currentTab) {
-            var currentTabIndex = currentTab[0].index;
-            var nextTabIndex = (currentTabIndex + 1) % totalTabsNumber;
-            chrome.tabs.highlight({"tabs": nextTabIndex});
-        });
-    });
-}
 
 // Add listener to tab switch event to keep track of last actived tab.
 chrome.tabs.onActivated.addListener(function (activeInfo) {
@@ -107,3 +92,19 @@ chrome.tabs.onActivated.addListener(function (activeInfo) {
 
     console.log(queue);
 });
+
+function switchToNextTab() {
+    chrome.tabs.query({
+        currentWindow: true
+    }, function (tabs) {
+        var totalTabsNumber = tabs.length;
+        chrome.tabs.query({
+            currentWindow: true,
+            active: true
+        }, function (currentTab) {
+            var currentTabIndex = currentTab[0].index;
+            var nextTabIndex = (currentTabIndex + 1) % totalTabsNumber;
+            chrome.tabs.highlight({ "tabs": nextTabIndex });
+        });
+    });
+}
