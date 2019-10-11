@@ -3,8 +3,7 @@ chrome.runtime.onInstalled.addListener(function () {
     chrome.contextMenus.create({
         "id": "CopyLinkName",
         "title": "Copy Link Text",
-        "contexts": ["selection"]
-//        "contexts": ["link"]
+        "contexts": ["link"]
     }, function () {
         console.log("Context Menu for copy link name created")
     }
@@ -12,9 +11,9 @@ chrome.runtime.onInstalled.addListener(function () {
 });
 
 chrome.contextMenus.onClicked.addListener(function (info, tab) {
-    
-    //console.log(info);
-
-    var ae = document.activeElement;
-    console.log(ae);
+    // When the copy link text context menu is clicked, execute a injected code snippet to get the link text.
+    chrome.tabs.executeScript({
+        code: 'navigator.clipboard.writeText(document.activeElement.textContent);'
+    });
+    //console.log(document.activeElement.textContent);
 });
