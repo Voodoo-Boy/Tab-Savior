@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="../semantic/dist/semantic.min.css">
     <script src="../Dependency/jquery-3.1.1.min.js"></script>
     <script src="../semantic/dist/semantic.min.js"></script>
+    <script src="../node_modules/mustache/mustache.js"></script>
 
 
     <!-- <style>
@@ -21,7 +22,24 @@
 </head>
 
 <body>
-    <div class="ui padded grid container">
+    <div id="target">Loading</div>
+    <script id="template" type="x-tmpl-mustache">
+            <div class="ui padded grid container">
+        <div class="ui relaxed celled list">
+            {{#tabitems}}
+            <div class="item">
+                <i class="large github middle aligned icon"></i>
+                <div class="content">
+                    <a class="header">{{title}}</a>
+                    <div class="description">{{url}}</div>
+                </div>
+            </div>
+            {{/tabitems}}
+        </div>
+    </div>
+    </script>
+
+    <!-- <div class="ui padded grid container">
         <div class="ui relaxed celled list">
             <div class="item">
                 <i class="large github middle aligned icon"></i>
@@ -45,7 +63,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </body>
 
 </html>

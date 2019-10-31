@@ -3,6 +3,7 @@ var tabsList = JSON.parse(tabsData);
 
 window.onload = function () {
     //displayTabList("aaa", tabsList)
+    displayTabList("aaa", tabsList);
 }
 
 // function displayTabList(tabSetName, tabsList)
@@ -37,5 +38,8 @@ window.onload = function () {
 
 function displayTabList(tabListName, data)
 {
-    
+    var template = $('#template').html();
+    Mustache.parse(template);
+    var rendered = Mustache.render(template, {"tabitems": data});
+    $('#target').html(rendered);
 }
