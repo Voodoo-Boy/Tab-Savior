@@ -2,58 +2,40 @@ var tabsData='[{ "title": "Content Security Policy (CSP) - Google Chrome", "url"
 var tabsList = JSON.parse(tabsData);
 
 window.onload = function () {
-    displayTabList("aaa", tabsList)
+    //displayTabList("aaa", tabsList)
 }
 
-function displayTabList(tabSetName, tabsList)
-{
-    var currentTabList = d3.selectAll("#currentTabList");
+// function displayTabList(tabSetName, tabsList)
+// {
+//     var currentTabList = d3.selectAll("#currentTabList");
     
-    currentTabList.html("");
-    currentTabList.append('ul')
-        .classed('mdc-list', true)
-        .selectAll('li')
-        .data(tabsList)
-        .enter()
-        .append('li')
-        .classed('mdc-list-item', true)
-        .each(function(item, i){
-            var listItem = d3.select(this);
-            listItem.append('img')
-                .classed('mdc-list-item__graphic material-icons', true)
-                .attr("src", item.favicon)
-            listItem.append('span')
-                .classed('mdc-list-item__text', true)
-                .text(item.title);
+//     currentTabList.html("");
+//     currentTabList.append('ul')
+//         .classed('mdc-list', true)
+//         .selectAll('li')
+//         .data(tabsList)
+//         .enter()
+//         .append('li')
+//         .classed('mdc-list-item', true)
+//         .each(function(item, i){
+//             var listItem = d3.select(this);
+//             listItem.append('img')
+//                 .classed('mdc-list-item__graphic material-icons', true)
+//                 .attr("src", item.favicon)
+//             listItem.append('span')
+//                 .classed('mdc-list-item__text', true)
+//                 .text(item.title);
 
-            var checkBox = listItem.append('div')
-                .classed('mdc-checkbox', true)
-                .classed('mdc-list-item__meta', true);
-            checkBox.append('input').attr('type', 'checkbox').classed('mdc-checkbox__native-control', true).attr('id', tabSetName + i).attr('checked', true);
-            checkBox.append('div').classed('mdc-checkbox__background', true).attr('id', tabSetName+i)
-                .html('<svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24"><path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" /></svg><div class="mdc-checkbox__mixedmark"></div>');
-        });
+//             var checkBox = listItem.append('div')
+//                 .classed('mdc-checkbox', true)
+//                 .classed('mdc-list-item__meta', true);
+//             checkBox.append('input').attr('type', 'checkbox').classed('mdc-checkbox__native-control', true).attr('id', tabSetName + i).attr('checked', true);
+//             checkBox.append('div').classed('mdc-checkbox__background', true).attr('id', tabSetName+i)
+//                 .html('<svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24"><path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" /></svg><div class="mdc-checkbox__mixedmark"></div>');
+//         });
+// }
 
-
-        // .append('span')
-        // .classed('mdc-list-item__text', true)
-        // .text(function (item, i) { 
-        //     var title = item.title;
-        //     var url = item.url;
-        //     var favicon = item.favicon;
-
-
-        //     return title;
-        // })
-        // .append("p").raise().raise();
-
-    // console.log(ul);
-
-    // var temp = ul.selectAll('li');
-    // console.log(temp);
-    // ul.selectAll('li')
-    //     .data(names)
-    //     .enter()
-    //     .append('li')
-    //     .html(String);
+function displayTabList(tabListName, data)
+{
+    
 }

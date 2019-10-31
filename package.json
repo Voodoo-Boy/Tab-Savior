@@ -1,0 +1,23 @@
+{
+  "name": "tab-savior",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Voodoo-Boy/Tab-Savior.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Voodoo-Boy/Tab-Savior/issues"
+  },
+  "homepage": "https://github.com/Voodoo-Boy/Tab-Savior#readme",
+  "dependencies": {
+    "mustache": "^3.1.0",
+    "semantic-ui": "^2.4.2"
+  }
+}
