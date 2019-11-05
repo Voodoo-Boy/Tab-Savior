@@ -2,8 +2,6 @@
 
 <head>
     <title>TabManagement Popup</title>
-    <!--meta name="viewport" content="width=100, initial-scale=1"-->
-    <meta id="Viewport" name="viewport" content="width=100, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <script src="../Dependency/lz-string.min.js"></script>
     <!-- Our Logic -->
     <script src="TabManagement-Popup.js"></script>
@@ -23,48 +21,32 @@
 </head>
 
 <body>
-    <div id="target">Loading</div>
-    <script id="template" type="x-tmpl-mustache">
-            <div class="ui padded grid container">
-        <div class="ui relaxed celled list">
-            {{#tabitems}}
-            <div class="item">
-                <i class="large github middle aligned icon"></i>
-                <div class="content">
-                    <a class="header">{{title}}</a>
-                    <div class="description">{{url}}</div>
+    <div id="tabList">Loading</div>
+
+    <div id="tabListTemplate" hidden>
+        <div class="ui padded grid container">
+            <div class="ui segment">
+                <div id="tabListName" class="ui small header">
+                    {{tabListName}}
+                </div>
+                <div class="ui relaxed celled mini list">
+                    {{#tabitems}}
+                    <div class="item">
+                        <div class="ui checked checkbox">
+                            <input type="checkbox" checked>
+                            <label></label>
+                        </div>
+                        <img class="ui avatar image" src="{{favicon}}">
+                        <div class="content">
+                            <a class="header">{{title}}</a>
+                            <div class="description">{{url}}</div>
+                        </div>
+                    </div>
+                    {{/tabitems}}
                 </div>
             </div>
-            {{/tabitems}}
         </div>
     </div>
-    </script>
-
-    <!-- <div class="ui padded grid container">
-        <div class="ui relaxed celled list">
-            <div class="item">
-                <i class="large github middle aligned icon"></i>
-                <div class="content">
-                    <a class="header">Design User Interface - Google Chrome</a>
-                    <div class="description">https://developer.chrome.com/extensions/user_interface</div>
-                </div>
-            </div>
-            <div class="item">
-                <i class="large github middle aligned icon"></i>
-                <div class="content">
-                    <a class="header">Design User Interface - Google Chrome</a>
-                    <div class="description">https://developer.chrome.com/extensions/user_interface</div>
-                </div>
-            </div>
-            <div class="item">
-                <i class="large github middle aligned icon"></i>
-                <div class="content">
-                    <a class="header">Design User Interface - Google Chrome</a>
-                    <div class="description">https://developer.chrome.com/extensions/user_interface</div>
-                </div>
-            </div>
-        </div>
-    </div> -->
 </body>
 
 </html>

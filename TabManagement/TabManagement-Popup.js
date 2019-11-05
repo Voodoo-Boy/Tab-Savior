@@ -38,8 +38,9 @@ window.onload = function () {
 
 function displayTabList(tabListName, data)
 {
-    var template = $('#template').html();
+    //var tabListName = $('#tabListName').text(tabListName);
+    var template = $('#tabListTemplate').html();
     Mustache.parse(template);
-    var rendered = Mustache.render(template, {"tabitems": data});
-    $('#target').html(rendered);
+    var rendered = Mustache.render(template, {"tabListName": tabListName, "tabitems": data});
+    $('#tabList').html(rendered);
 }
